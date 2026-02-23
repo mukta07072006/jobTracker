@@ -18,7 +18,7 @@ function renderJobs(dataToDisplay){
         <div class="bg-base-100 border-[1px] border-gray-200 px-5 py-7 rounded-xl mt-6 mb-6 cardC">
         <h2 id="company" class="font-semibold text-lg text-blue-950 flex justify-between items-center">
             <span>${job.company}</span>
-            <div class="btn-div"><img class="dlt-btn cursor-pointer" data-company="${job.company}" src="Group 1.svg" alt=""></div>
+            <div class="btn-div"><img class="dlt-btn cursor-pointer" data-company="${job.company}" src="delete.svg" alt=""></div>
         </h2>
         <p id="jobTitle" class="text-sm text-gray-700 mb-3">${job.jobTitle}</p>
         <p id="etc" class="text-sm text-gray-500 mb-3">${job.etc}</p>
