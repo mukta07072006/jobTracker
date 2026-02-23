@@ -74,11 +74,25 @@ mainContainer.addEventListener("click", function(event){
         console.log(companyName);
         console.log(allJobs);
         allJobs = allJobs.filter(job => job.company !== companyName);
-        renderJobs(allJobs);
+        if (activeTab === "All"){
+            renderJobs(allJobs);
+            totalOf.textContent = allJobs.length;
+         }
+         else if (activeTab === "Inter"){
+            const interCount = allJobs.filter(job => job.status === "Interview");
+            renderJobs(interCount);
+            totalOf.textContent = interCount.length;
+         }
+         else if(activeTab === "Reject"){
+             const rejectedCCount = allJobs.filter(job => job.status === "Rejected");
+             renderJobs(rejectedCCount);
+             totalOf.textContent = rejectedCCount.length;
+         }
 
         totalCount.textContent = allJobs.length;
-        totalOf.textContent = allJobs.length;
+        
         topTotal.textContent = allJobs.length;
+
         const rejectedCCount = allJobs.filter(job => job.status === "Rejected");
         console.log(rejectedCCount.length);
         rejectedCount.textContent = rejectedCCount.length;
