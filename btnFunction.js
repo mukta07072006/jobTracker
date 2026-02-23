@@ -16,10 +16,12 @@ mainContainer.addEventListener("click", function(event){
          }
          else if (activeTab === "Inter"){
             const interCount = allJobs.filter(job => job.status === "Interview");
+            totalOf.textContent = interCount.length;
             renderJobs(interCount);
          }
          else if(activeTab === "Reject"){
              const rejectedCCount = allJobs.filter(job => job.status === "Rejected");
+             totalOf.textContent =rejectedCCount.length;
              renderJobs(rejectedCCount)
          }
        }
@@ -43,14 +45,17 @@ mainContainer.addEventListener("click", function(event){
         if(jobToUpdate){
         jobToUpdate.status = "Rejected"
          if (activeTab === "All"){
+            
             renderJobs(allJobs);
          }
          else if (activeTab === "Inter"){
             const interCount = allJobs.filter(job => job.status === "Interview");
+            totalOf.textContent = interCount.length;
             renderJobs(interCount);
          }
          else if(activeTab === "Reject"){
              const rejectedCCount = allJobs.filter(job => job.status === "Rejected");
+             totalOf.textContent =rejectedCCount.length;
              renderJobs(rejectedCCount)
          }
        }
