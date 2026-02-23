@@ -25,9 +25,7 @@ mainContainer.addEventListener("click", function(event){
              renderJobs(rejectedCCount)
          }
        }
-        statusElement.classList.remove("text-red-900", "bg-red-200");
-        statusElement.classList.remove("bg-blue-100" , "text-blue-900");
-        statusElement.classList.add("text-green-900", "bg-green-200");
+        
         const interCount = allJobs.filter(job => job.status === "Interview");
         // console.log(interCount.length);
         interviewCount.textContent = interCount.length;
@@ -59,9 +57,7 @@ mainContainer.addEventListener("click", function(event){
              renderJobs(rejectedCCount)
          }
        }
-        statusElement.classList.add("text-red-900", "bg-red-200");
-        statusElement.classList.remove("bg-blue-100" , "text-blue-900");
-        statusElement.classList.remove("text-green-900", "bg-green-200");
+        
         const rejectedCCount = allJobs.filter(job => job.status === "Rejected");
         // console.log(rejectedCCount.length);
         rejectedCount.textContent = rejectedCCount.length;
