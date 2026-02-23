@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Tracker</title>
+
+    <!-- tailwind & DaisyUi CDN -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <style>
+        * {
+            font-family: 'Work Sans', sans-serif;
+            /* margin: 0px;
+            padding: 0px; */
+        }
+      </style>
+
+
+</head>
+<body class="w-full h-full bg-[#F8FAFC]">
+    <div class="w-[80%] mx-auto py-9">
+    <header>
+        <h1 class="text-2xl font-semibold text-[#002C5C] mt-10">Job Application Tracker</h1>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+            <div class="px-6 py-3 bg-base-100 border-[1px] border-gray-200 rounded-lg">
+                <h2 class="font-semibold">Total</h2>
+                <p id="topTotal" class="font-bold text-2xl text-blue-900" >8</p>
+            </div>
+            <div class="px-6 py-3 bg-base-100 border-[1px] border-gray-200 rounded-lg">
+                <h2 class="font-semibold">InterView</h2>
+                <p id="interviewCount" class="font-bold text-2xl text-green-500" >0</p>
+            </div>
+            <div class="px-6 py-3 bg-base-100 border-[1px] border-gray-200 rounded-lg">
+                <h2 class="font-semibold">Rejected</h2>
+                <p id="rejectedCount" class="font-bold text-2xl text-red-500" >0</p>
+            </div>
+        </div>
+    </header>
+    <hr class="my-5">
+    <div>
+        <div flex class="md:flex md:flex-row flex-col items-center justify-between mb-4">
+
+            <h2 class="text-xl font-semibold mb-3">Available Jobs</h2>
+            <p><span id="totalOf" class="font-bold text-md text-gray-400">0 </span><span> of </span><span id="totalCount" class="font-bold text-md ">0 </span> Jobs</p>
+        </div>
+        <div class="w-fit md:flex md:flex-row gap-4">
+            <button onclick="toggle('btnAll')" id="btnAll" class="px-10 py-[6px] rounded-sm mr-2 bg-[#3B82F6] text-white border-[1px] border-gray-200 font-medium cursor-pointer mb-3">All</button>
+            <button onclick="toggle('btnInterview')" id="btnInterview" class="px-7 py-[6px] rounded-sm mr-2 btn-info font-medium border-[1px] border-gray-200 text-gray-500 bg-white cursor-pointer mb-3">Interview</button>
+            <button onclick="toggle('btnRejected')" id="btnRejected" class="px-7 py-[6px] rounded-sm mr-2 btn-info font-medium border-[1px] border-gray-200 text-gray-500 bg-white cursor-pointer mb-3">Rejected</button>
+        </div>
+    </div>
+
+<main id="container">
+            <div id="empty" class="bg-white rounded-xl flex-col items-center justify-center mt-6 border-[1px] border-gray-300 p-24 mb-10 hidden">
+                <img src="doc.svg" alt="">
+                <p class="text-center text-2xl font-semibold text-gray-500">No Jobs Available</p>
+            </div>
+
+    <section id="cardContainer" class="cardContainer">
+
+
+    </section>
+
+</main>
+</div>
+<!-- 
+<script src="script.js"></script> -->
+<script src="renderJobs.js"></script>
+<script src="cardsInfo.js"></script>
+<script src="toggle.js"></script>
+<script src="imports.js"></script>
+<script src="btnFunction.js"></script>
+</body>
+</html>
